@@ -1,4 +1,8 @@
 import './styles.scss'
+import './src/components/navbar/navbar-app'
+import { navbarApp } from './src/components/navbar/navbar-app.js'
+
+document.querySelector("#navbar-app").innerHTML= navbarApp();
 
 document.querySelector('#app').innerHTML = `
   <div class="container text-center">
