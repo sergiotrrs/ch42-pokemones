@@ -6,5 +6,14 @@ document.querySelector('#app').innerHTML = `
     <button class="btn btn-warning" >Click me</button>
   </div>
 `
+const changeMain = () =>{
+   setInterval( ()=>{
+    document.querySelector('#app').innerHTML = `
+      <div class="container text-center">
+        <h1 class="bg-info">Día de Bolillo y Chocolate</h1>
+      </div>
+    `
+   }, 8000  );
+}
 
-
+changeMain();
