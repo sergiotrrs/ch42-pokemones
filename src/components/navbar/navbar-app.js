@@ -1,8 +1,34 @@
+const pages = [
+  {
+    name: "Home",
+    url: "/index.html",
+    active: false,
+  },
+  {
+    name: "Products",
+    url: "/src/pages/products/products.html",
+    active: false,
+  },
+  {
+    name: "About Us",
+    url: "/src/pages/about-us/about-us.html",
+    active: false,
+  },
+  {
+    name: "Contact",
+    url: "/src/pages/contact/contact.html",
+    active: false,
+  },
+  {
+    name: "Admin",
+    url: "/src/pages/admin/admin.html",
+    active: false,
+  },
+];
 
-
-const navbarApp = ( ) => {
-    // Filtro para seleccionar la página visitada
- return  `
+const navbarApp = () => {
+  // Filtro para seleccionar la página visitada
+  return `
       <nav>
         <ul>
           <li> <a href="/index.html"> Home </a></li>
@@ -12,6 +38,6 @@ const navbarApp = ( ) => {
         </ul>
       </nav>
 `;
-}
+};
 
 export { navbarApp };
