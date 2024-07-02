@@ -1,5 +1,5 @@
 const postContactForm = async () => {
-  const url = "https://s.in/api/users";
+  const url = "https://reqres.in/api/users";
 
   const contactFormData = {
     fullName: "Sergio",
@@ -13,6 +13,11 @@ const postContactForm = async () => {
   };
 
   const response = await fetch(url, options);
+
+  if( response.status !== 201){
+    throw "Problemas con el registro";
+  }
+
   const contactResult = await response.json();
   console.log(contactResult);
 

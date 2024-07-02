@@ -51,6 +51,7 @@ contactForm.addEventListener( "submit"  , async( event )=>{
     if( results.isValid ){
         try{
             await postContactForm();
+            alert("Gracias por tu mensaje");
         }
         catch(error){
             const errorMessage = document.getElementById("post-error-message");
