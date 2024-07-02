@@ -50,7 +50,7 @@ contactForm.addEventListener( "submit"  , async( event )=>{
     const results = validateInputsForm( formData ); 
     if( results.isValid ){
         try{
-            await postContactForm();
+            await postContactForm( formData );
             alert("Gracias por tu mensaje");
         }
         catch(error){

@@ -1,10 +1,5 @@
-const postContactForm = async () => {
+const postContactForm = async ( contactFormData ) => {
   const url = "https://reqres.in/api/users";
-
-  const contactFormData = {
-    fullName: "Sergio",
-    email: "miemail@email.com",
-  };
 
   const options = {
     method: "POST", // DELETE, PUT, POST, GET
