@@ -1,16 +1,20 @@
 
 
 const validateFullName = ( fullName ) => {
-    let isValid = true;
-
+    const result = {
+        isValid : true,
+        error: ""
+    }
     
     if( fullName.length < 3 ){ // Longitud mínima
-        isValid = false;
+        result.isValid = false;
+        result.error = "El nombre debe ser mayor o igual a 3 caracteres";
     } else if (  fullName.length > 50 ){ // Longitud máxima
-        isValid = false;
+        result.isValid = false;
+        result.error = "El nombre debe ser menos o igual a 50 caracteres";
     }
 
-    return isValid;
+    return result;
 }
 
 export { validateFullName };

@@ -6,9 +6,10 @@ const validateInputsForm = (formData) => {
     error: "",
   };
 
-  if ( validateFullName(formData.fullName) == false ){
+  const checkFullName = validateFullName(formData.fullName) 
+  if (  checkFullName.isValid === false ){
     results.isValid = false;
-    results.error = "El nombre no está bien definido"
+    results.error = checkFullName.error;
   }
 
   return results;
