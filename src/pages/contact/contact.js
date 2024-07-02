@@ -50,8 +50,13 @@ contactForm.addEventListener( "submit"  , ( event )=>{
     if( results.isValid ){
         alert("Gracias por tu mensaje");
     } else {
-        alert(`Tus datos no son correctos en ${results.error}`);
+        const errorMessage = document.getElementById("error-message");
+        errorMessage.innerHTML = results.error;
+        errorMessage.style.display = "block";
+        setTimeout( ()=> errorMessage.style.display = "none", 5000  );
     }
 
 
 } );
+
+
