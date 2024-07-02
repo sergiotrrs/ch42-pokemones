@@ -11,6 +11,21 @@ document.getElementById('navbar-app').innerHTML =  navbarApp();
 // const contactForm = document.querySelector("form");
 const contactForm = document.forms["contactForm"];
 
+
+const validateInputsForm = ( formData ) =>{
+
+const results = {
+    isValid : true,
+    error: ""
+}
+
+// TODO Valida datos
+
+return results;
+
+}
+
+
 /**
  *  AddEventListener permite agregar funciones que se ejecutarán
  *  en respuesta a un evento específico que ocurre aun elemento del DOM.
@@ -44,4 +59,13 @@ contactForm.addEventListener( "submit"  , ( event )=>{
     }
     
     console.table( formData );
+
+    const results = validateInputsForm( formData ); 
+    if( results.isValid ){
+        alert("Gracias por tu mensaje");
+    } else {
+        alert(`Tus datos no son correctos en ${results.error}`);
+    }
+
+
 } );
