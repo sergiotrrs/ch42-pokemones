@@ -20,14 +20,14 @@
             </div>
             <!-- formulario de contacto -->
             <div class="col-md-6">
-                <form id="contactForm" >
+                <form id="contactForm">
                     <div class="rounded-box"> <!-- Caja contenedora con borde redondeado -->
                         <div class="mx-3 mb-3">
                             <i class="bi bi-person-hearts"></i>
                             <label for="fullName" class="form-label">Nombre completo</label>
                             <div class="position-relative">
                                 <input type="text" class="form-control form-control-with-icon" id="fullName"
-                                    placeholder="Escribe tu nombre completo" >
+                                    placeholder="Escribe tu nombre completo">
                             </div>
                         </div>
 
@@ -36,7 +36,7 @@
                             <label for="email" class="form-label">Email</label>
                             <div class="position-relative">
                                 <input type="email" class="form-control form-control-with-icon" id="email"
-                                    placeholder="eva01@email.com" >
+                                    placeholder="eva01@email.com">
                             </div>
                         </div>
 
@@ -44,7 +44,7 @@
                             <i class="bi bi-chat-left-heart-fill"></i>
                             <label for="comments" class="form-label">Deja un mensaje en este espacio</label>
                             <textarea class="form-control form-control-textarea" id="comments" rows="4"
-                                placeholder="Kondo wa kondo, ima wa ima..." ></textarea>
+                                placeholder="Kondo wa kondo, ima wa ima..."></textarea>
                         </div>
                     </div>
 
@@ -59,7 +59,12 @@
 
                     <!-- Mensaje de alerta -->
                     <div id="error-message" class="alert alert-warning my-2" role="alert" style="display: none;">
-                        
+
+                    </div>
+
+                    <!-- Mensaje de error -->
+                    <div id="post-error-message" class="alert alert-danger my-2" role="alert" style="display: none;">
+
                     </div>
 
                 </form>

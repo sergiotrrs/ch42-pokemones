@@ -2,6 +2,7 @@ import '/styles.scss'
 import './contact.css'
 import { navbarApp } from '../../components/navbar/navbar-app.js'
 import { validateInputsForm } from '../../components/validateInputsForm/validateInputsForm.js';
+import { postContactForm } from '../../components/postContactForm/postContactForm.js';
 
 document.getElementById('navbar-app').innerHTML =  navbarApp();
 
@@ -48,7 +49,15 @@ contactForm.addEventListener( "submit"  , ( event )=>{
 
     const results = validateInputsForm( formData ); 
     if( results.isValid ){
-        alert("Gracias por tu mensaje");
+        try{
+            postContactForm();
+        }
+        catch(error){
+            const errorMessage = document.getElementById("post-error-message");
+            errorMessage.innerHTML = error;
+            errorMessage.style.display = "block";
+            setTimeout( ()=> errorMessage.style.display = "none", 5000  );           
+        }
     } else {
         const errorMessage = document.getElementById("error-message");
         errorMessage.innerHTML = results.error;
