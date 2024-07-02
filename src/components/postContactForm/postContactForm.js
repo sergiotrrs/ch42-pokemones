@@ -1,7 +1,22 @@
+const postContactForm = async () => {
+  const url = "https://s.in/api/users";
 
+  const contactFormData = {
+    fullName: "Sergio",
+    email: "miemail@email.com",
+  };
 
-const postContactForm = ()=>{
+  const options = {
+    method: "POST", // DELETE, PUT, POST, GET
+    header: { "Content-Type": "application/json" },
+    body: JSON.stringify(contactFormData),
+  };
 
-}
+  const response = await fetch(url, options);
+  const contactResult = await response.json();
+  console.log(contactResult);
+
+  return contactResult;
+};
 
 export { postContactForm };

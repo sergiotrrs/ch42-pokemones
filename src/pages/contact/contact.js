@@ -23,7 +23,7 @@ const contactForm = document.forms["contactForm"];
  * cambios de teclado, movimientos del mouse, entre otros.
  */
 // contactForm.addEventListener( "click"  , ()=>{} );
-contactForm.addEventListener( "submit"  , ( event )=>{
+contactForm.addEventListener( "submit"  , async( event )=>{
     event.preventDefault();
     console.log("Estoy en el evento click del botón submit");
 
@@ -50,7 +50,7 @@ contactForm.addEventListener( "submit"  , ( event )=>{
     const results = validateInputsForm( formData ); 
     if( results.isValid ){
         try{
-            postContactForm();
+            await postContactForm();
         }
         catch(error){
             const errorMessage = document.getElementById("post-error-message");
