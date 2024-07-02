@@ -1,4 +1,5 @@
 import '/styles.scss'
+import './contact.css'
 import {navbarApp} from '../../components/navbar/navbar-app.js'
 
 document.getElementById('navbar-app').innerHTML =  navbarApp();
@@ -24,11 +25,22 @@ contactForm.addEventListener( "submit"  , ( event )=>{
     event.preventDefault();
     console.log("Estoy en el evento click del botón submit");
 
+    // Referencia de inputs
+    const emailRef = contactForm.elements["email"];
+    const fullNameRef = contactForm.elements["fullName"];
+    const commentsRef = contactForm.elements["comments"];
+    const termsandCondictionsRef = contactForm.elements["terminos-condiciones"];
+    
+    // Sanitizar los datos
+    emailRef.value = emailRef.value.trim().toLowerCase(); // convertir a minúsculas
+    fullNameRef.value = fullNameRef.value.trim(); // eliminar espacio al inicoo y final
+    commentsRef.value = commentsRef.value.trim();
+
     const formData = {
-        fullName : contactForm.elements["fullName"].value,
-        email : contactForm.elements["email"].value,
-        comments : contactForm.elements["comments"].value,
-        termsAndConditions : contactForm.elements["terminos-condiciones"].checked
+        fullName : fullNameRef.value,
+        email : emailRef.value,
+        comments : commentsRef.value,
+        termsAndConditions : termsandCondictionsRef.checked
     }
     
     console.table( formData );
