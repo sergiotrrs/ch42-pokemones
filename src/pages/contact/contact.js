@@ -1,6 +1,7 @@
 import '/styles.scss'
 import './contact.css'
-import {navbarApp} from '../../components/navbar/navbar-app.js'
+import { navbarApp } from '../../components/navbar/navbar-app.js'
+import { validateInputsForm } from '../../components/validateInputsForm/validateInputsForm.js';
 
 document.getElementById('navbar-app').innerHTML =  navbarApp();
 
@@ -10,21 +11,6 @@ document.getElementById('navbar-app').innerHTML =  navbarApp();
 // const contactForm = document.querySelector("#conactForm");
 // const contactForm = document.querySelector("form");
 const contactForm = document.forms["contactForm"];
-
-
-const validateInputsForm = ( formData ) =>{
-
-const results = {
-    isValid : true,
-    error: ""
-}
-
-// TODO Valida datos
-
-return results;
-
-}
-
 
 /**
  *  AddEventListener permite agregar funciones que se ejecutarán
