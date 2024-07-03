@@ -1,4 +1,5 @@
 import './styles.scss'
+import * as bootstrap from 'bootstrap'
 import './src/components/navbar/navbar-app'
 import { navbarApp } from './src/components/navbar/navbar-app.js'
 

@@ -28,6 +28,13 @@ const pages = [
       icon: '<i class="bi bi-envelope-paper-heart-fill"></i>',
     },
     {
+      name: "Login",
+      url: "/src/pages/login/login.html",
+      active: false,
+      visible: true,
+      icon: '<i class="bi bi-person-heart"></i>',
+    },
+    {
       name: "Admin",
       url: "/src/pages/admin/admin.html",
       active: false,
