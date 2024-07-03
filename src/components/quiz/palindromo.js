@@ -8,14 +8,7 @@ const palindrome = ( phrase ) =>{
     if(phrase === "") return false;
 
     const lowerCasePhrase = phrase.toLowerCase();
-
-    let phraseWithoutSpace = "";
-    for(let i = 0; i < lowerCasePhrase.length; i++){
-        if( lowerCasePhrase.charAt(i) !== " " ){
-            phraseWithoutSpace += lowerCasePhrase.charAt(i); 
-            // phraseWithoutSpace = phraseWithoutSpace + lowerCasePhrase.charAt(i)
-        }
-    }
+    const phraseWithoutSpace = lowerCasePhrase.replace( /\s/g , "" ); // regex
 
     const reversePhrase = phraseWithoutSpace.split("").reverse().join("");
 
