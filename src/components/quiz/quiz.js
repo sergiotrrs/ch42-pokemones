@@ -3,21 +3,12 @@
 const cadena = "parangaricutirimicuaro";
 
 
-const cantidadDeLetras = ( letra, frase ) => {
-    let letrasEncontradas = 0;
-    const letraEnMinuscula = letra.toLowerCase();
-    const fraseEnMinuscula = frase.toLowerCase();
-
-    for(let i=0; i < fraseEnMinuscula.length; i++  ){
-        if( letraEnMinuscula === fraseEnMinuscula[i] ) {  // letra === frase.charAt( i )
-           letrasEncontradas++; // letrasEncontradas = letrasEncontradas + 1; 
-        }
-    }
-
-    return letrasEncontradas;
+const cantidadDeLetras = ( charToFind , phrase ) => {
+    const chars = phrase.toLowerCase().split("");
+    const lowerCaseCharToFind = charToFind.toLowerCase();
+    const foundChars = chars.filter( char => char === lowerCaseCharToFind );
+    return foundChars.length;
 } 
-
-
 
 // exportacion nombrada
  export { cadena };
