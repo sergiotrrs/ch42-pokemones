@@ -5,10 +5,21 @@
   Ejemplo: oso, Anita lava la tina
 */
 const palindrome = ( phrase ) =>{
+    if(phrase === "") return false;
 
-    // TODO realizar la funcionalidad
+    const lowerCasePhrase = phrase.toLowerCase();
 
-    return false;
+    let phraseWithoutSpace = "";
+    for(let i = 0; i < lowerCasePhrase.length; i++){
+        if( lowerCasePhrase.charAt(i) !== " " ){
+            phraseWithoutSpace += lowerCasePhrase.charAt(i); 
+            // phraseWithoutSpace = phraseWithoutSpace + lowerCasePhrase.charAt(i)
+        }
+    }
+
+    const reversePhrase = phraseWithoutSpace.split("").reverse().join("");
+
+    return phraseWithoutSpace === reversePhrase;
 }
 
 export { palindrome };
