@@ -12,5 +12,5 @@ test( "Verificar la cantidad de letras en una palabra", ()=>{
 
 test( "Verificar la cantidad de letras en una frase con Mayúsculas", ()=>{
     const phraseWithMayus = "Miguel Está Muy Grande pero muy hermoso";
-    expect( cantidadDeLetras("m", phraseWithMayus).toBe( 4 ) );
+    expect( cantidadDeLetras("m", phraseWithMayus)).toBe( 4 ) ;
 });
