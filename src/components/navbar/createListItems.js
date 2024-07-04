@@ -16,7 +16,7 @@ const createListItems = ( pages, currentHtml ) => {
             class="nav-link ${page.active? 'active': '' }" 
             href="${page.url}"
             > 
-            ${page.name} 
+            ${page.icon} ${page.name} 
             </a>            
         </li>
     `);
