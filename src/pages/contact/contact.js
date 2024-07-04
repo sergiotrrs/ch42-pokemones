@@ -1,4 +1,5 @@
 import '/styles.scss'
+import * as bootstrap from 'bootstrap'
 import './contact.css'
 import { navbarApp } from '../../components/navbar/navbar-app.js'
 import { validateInputsForm } from '../../components/validateInputsForm/validateInputsForm.js';
