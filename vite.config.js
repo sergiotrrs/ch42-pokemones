@@ -11,7 +11,7 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         aboutUs: resolve(__dirname, 'src/pages/about-us/about-us.html'),
         admin: resolve(__dirname, 'src/pages/admin/admin.html'),
-        contact: resolve(__dirname, 'src/pages/contact/contact.html'),
+        register: resolve(__dirname, 'src/pages/register/register.html'),
         login: resolve(__dirname, 'src/pages/login/login.html'),
       },
     },

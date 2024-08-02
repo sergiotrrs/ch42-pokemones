@@ -1,24 +1,40 @@
-import './styles.scss'
-import * as bootstrap from 'bootstrap'
-import './src/components/navbar/navbar-app'
-import { navbarApp } from './src/components/navbar/navbar-app.js'
+import "./styles.scss";
+import * as bootstrap from "bootstrap";
+import "./src/components/navbar/navbar-app";
+import { navbarApp } from "./src/components/navbar/navbar-app.js";
+import { domainName } from "./src/components/api/domainName.js";
 
-document.querySelector("#navbar-app").innerHTML= navbarApp();
+document.querySelector("#navbar-app").innerHTML = navbarApp();
+const url = `${domainName()}/api/v2/users`;
 
-document.querySelector('#app').innerHTML = `
-  <div class="container text-center">
-    <h1 class="bg-warning">Día de Emos</h1>
-    <button class="btn btn-warning" >Click me</button>
-  </div>
-`
-const changeMain = () =>{
-   setInterval( ()=>{
-    document.querySelector('#app').innerHTML = `
-      <div class="container text-center">
-        <h1 class="bg-info">Día de Bolillo y Chocolate</h1>
-      </div>
-    `
-   }, 8000  );
-}
+const getUsers = async (url) => {
+  const loader = document.getElementById("loader");
+  try {
+    loader.style.display = "flex"; // Show loader
+    const response = await fetch(url);
+    const users = await response.json();
 
-changeMain();
+    const listPeople = users.map(
+      ({ firstName, lastName, avatar, serialNumber, email }) => {
+        return `
+                <div class="col-lg-3 col-md-4 col-sm-5">
+                    <div class="card m-2 rounded shadow-sm">
+                        <div class="card-body"><strong>${firstName} ${lastName}</strong></div>
+                        <img src="${avatar}" class="card-img-top" alt="${firstName}">
+                        <div class="card-body">${serialNumber}</div>
+                        <div class="card-body">${email}</div>
+                    </div>                
+                </div>
+            `;
+      }
+    );
+
+    document.querySelector("#list-container").innerHTML = listPeople.join("");
+  } catch (exception) {
+    console.error("Error", exception);
+  } finally {
+    loader.style.display = "none"; // Hide loader
+  }
+};
+
+getUsers(url);

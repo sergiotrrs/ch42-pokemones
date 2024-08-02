@@ -36,7 +36,7 @@ const createListItems = ( pages, currentHtml ) => {
     const listItemsArray = pages.map( (page)=> `
         <li
           class="nav-item"          
-          style="visibility: ${page.visible? 'visible': 'hidden'}"
+          style="display: ${page.visible? 'list-item': 'none'}"
         > 
           <a 
             class="nav-link ${page.active? 'active': '' }" 

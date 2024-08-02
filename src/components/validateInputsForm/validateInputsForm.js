@@ -6,7 +6,7 @@ const validateInputsForm = (formData) => {
     error: "",
   };
 
-  const checkFullName = validateFullName(formData.fullName) 
+  const checkFullName = validateFullName(formData.firstName) 
   if (  checkFullName.isValid === false ){
     results.isValid = false;
     results.error = checkFullName.error;
