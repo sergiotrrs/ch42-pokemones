@@ -2,7 +2,6 @@ import { domainName } from "../api/domainName";
 
 const postRegisterForm = async ( registerFormData ) => {
   const url = `${domainName()}/api/v2/users`;
-  //const url = `https://reqres.in/api/users`;
 
   const options = {
     method: "POST", // DELETE, PUT, POST, GET
