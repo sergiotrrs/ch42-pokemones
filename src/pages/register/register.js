@@ -36,7 +36,7 @@ contactForm.addEventListener("submit", async (event) => {
 
   console.table(formData);
 
-  const results = validateLoginForm(formData);
+  const results = validateInputsForm(formData);
   if (results.isValid) {
     try {
       await postRegisterForm(formData);

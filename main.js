@@ -6,6 +6,8 @@ import { domainName } from "./src/components/api/domainName.js";
 import { getProducts } from "./src/components/api/getProducts.js";
 
 document.querySelector("#navbar-app").innerHTML = navbarApp();
+const spinnerWrapper = document.querySelector(".spinner-wrapper");
+
 const url = `${domainName()}/api/v3/products`;
 
 const loadProducts = async (url) => {
@@ -20,8 +22,10 @@ const loadProducts = async (url) => {
     errorMessage.style.display = "block";
     setTimeout(() => (errorMessage.style.display = "none"), 5000);
   } finally {
+    spinnerWrapper.style.opacity = '0';
     loader.style.display = "none"; 
   }
 };
+
 
 loadProducts(url);

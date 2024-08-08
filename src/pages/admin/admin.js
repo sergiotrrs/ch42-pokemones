@@ -6,6 +6,7 @@ import { getUsers } from '../../components/api/getUsers.js';
 import { domainName } from '../../components/api/domainName.js';
 
 document.querySelector("#navbar-app").innerHTML= navbarApp();
+const spinnerWrapper = document.querySelector(".spinner-wrapper");
 const url = `${domainName()}/api/v2/users`;
 const logout = document.querySelector("#logout");
 
@@ -28,6 +29,7 @@ const loadUsers = async (url) => {
     errorMessage.style.display = "block";
     setTimeout(() => (errorMessage.style.display = "none"), 5000);
   } finally {
+    spinnerWrapper.style.opacity = '0';
     loader.style.display = "none"; 
   }
 };
