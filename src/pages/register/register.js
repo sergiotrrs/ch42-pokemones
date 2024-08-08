@@ -3,7 +3,7 @@ import * as bootstrap from "bootstrap";
 import "./register.css";
 import { navbarApp } from "../../components/navbar/navbar-app.js";
 import { validateInputsForm } from "../../components/validateInputsForm/validateInputsForm.js";
-import { postRegisterForm } from "../../components/registerContactForm/registerContactForm.js";
+import { postRegisterForm } from "../../components/api/postUser.js";
 
 document.getElementById("navbar-app").innerHTML = navbarApp();
 
@@ -11,7 +11,6 @@ const contactForm = document.forms["contactForm"];
 
 contactForm.addEventListener("submit", async (event) => {
   event.preventDefault();
-  console.log("Estoy en el evento click del botón submit");
 
   const emailRef = contactForm.elements["email"];
   const firstNameRef = contactForm.elements["firstName"];
@@ -37,7 +36,7 @@ contactForm.addEventListener("submit", async (event) => {
 
   console.table(formData);
 
-  const results = validateInputsForm(formData);
+  const results = validateLoginForm(formData);
   if (results.isValid) {
     try {
       await postRegisterForm(formData);

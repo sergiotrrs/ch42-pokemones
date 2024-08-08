@@ -2,7 +2,6 @@ import { getHtmlPageName } from "./getHtmlPageName";
 
 const createListItems = ( pages, currentHtml ) => {
     const userSesion = {
-      role : "customer",
       isAdmin : false,
       expiration: 0
     }
@@ -10,7 +9,6 @@ const createListItems = ( pages, currentHtml ) => {
     const loadUserSesion = JSON.parse( localStorage.getItem("userSesion") );
     console.log(loadUserSesion)
     if( loadUserSesion !== null ){      
-        userSesion.role = loadUserSesion.role;
         userSesion.isAdmin = loadUserSesion.isAdmin;
         userSesion.expiration = loadUserSesion.expiration;
         if ( userSesion.isAdmin ){
